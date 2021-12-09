@@ -13,18 +13,59 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Board</name>
 	<description>Board project for Spring Boot</description>
+	
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	
+	<repositories>
+		<repository>
+			<id>mvn2</id>
+			<!-- <url>http://repo1.maven.org/maven2/</url> -->
+			<url>https://repo1.maven.org/maven2/</url>
+				
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>egovframe</id>
+			<!-- <url>http://www.egovframe.go.kr/maven/</url> -->
+			<url>http://maven.egovframe.kr:8080/maven/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>oracle</id>
+			<url>http://maven.jahia.org/maven2</url>
+		</repository>
+		<repository>
+	        <id>com.springsource.repository.bundles.external</id>
+	        <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+	        <url>http://repository.springsource.com/maven/bundles/external</url>
+	    </repository>
+		
+	</repositories>
+	
 	<dependencies>
-		<dependency>
+	
+<!-- 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
+		</dependency> -->
+		
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
+		</dependency> -->
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -41,26 +82,50 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- jsp 설정 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		
+		<!-- jstl 설정 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		
+		<!-- tiles 설정 -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>3.0.8</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

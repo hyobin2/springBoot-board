@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- 관리자 페이지 layout(tiles)설정 -->
+	<definition name="admin-layout" template="/WEB-INF/jsp/admin/layout/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/admin/layout/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/admin/layout/footer.jsp" />
+	</definition>
+	<!-- 관리자 페이지 layout(tiles)설정 --> 
+	<definition name="admin/**" extends="admin-layout">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/{1}.jsp" />
+	</definition>
+	
+	<definition name="hyobin-layout" template="/WEB-INF/jsp/hyobin/layout/loayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/hyobin/layout/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/hyobin/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="hyobin/**" extends="hyobin-layout">
+		<put-attribute name="content" value="/WEB-INF/jsp/hyobin/{1}.jsp"/>
+	</definition>
+	
+</tiles-definitions>
