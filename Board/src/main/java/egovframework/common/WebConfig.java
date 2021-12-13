@@ -2,10 +2,13 @@ package egovframework.common;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
+
+import egovframework.common.interceptor.AdminInterceptor;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer{
@@ -35,5 +38,11 @@ public class WebConfig implements WebMvcConfigurer{
 		tilesViewResolver.setOrder(1);
 		 
 		return tilesViewResolver;
+	}
+	
+	// interceptor
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/admin/**").excludePathPatterns("/admin/login");
 	}
 }
